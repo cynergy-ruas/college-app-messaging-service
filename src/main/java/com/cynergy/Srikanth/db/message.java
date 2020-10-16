@@ -1,20 +1,19 @@
-package com.cynergy.Srikanth.model;
+package com.cynergy.Srikanth.db;
 
-import java.util.Date;
+import com.cynergy.Srikanth.model.schema.MessageType;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class schema {
-
+@Document
+public class message {
+    
+    @Id
     private String message; 
     private String User;
-    private MessageType type;
+    // private MessageType type;
     private String Channel_Name;
-    private Date date; 
-
-    public enum MessageType{
-        CHAT,LEAVE,JOIN
-    }
-
+    //private Date date; 
     public String getMessage() {
         return message;
     }
@@ -31,13 +30,13 @@ public class schema {
         User = user;
     }
 
-    public MessageType getType() {
-        return type;
-    }
+    // public MessageType getType() {
+    //     return type;
+    // }
 
-    public void setType(MessageType type) {
-        this.type = type;
-    }
+    // public void setType(MessageType type) {
+    //     this.type = type;
+    // }
 
     public String getChannel_Name() {
         return Channel_Name;
@@ -47,17 +46,10 @@ public class schema {
         Channel_Name = channel_Name;
     }
 
-    public Date getDate() {
-         
-        return date;
-    }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-    
-
-   
 
     
+
+
+
 }
