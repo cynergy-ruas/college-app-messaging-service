@@ -1,6 +1,6 @@
 package com.cynergy.Srikanth.db;
 
-import com.cynergy.Srikanth.model.schema.MessageType;
+import com.cynergy.Srikanth.model.schema.MessageType; 
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
