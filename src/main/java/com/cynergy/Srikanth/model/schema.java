@@ -1,16 +1,21 @@
 package com.cynergy.Srikanth.model;
 
-import java.util.Date;
 
+import org.springframework.data.annotation.Id; // Used to Declare ID for Mongo DB
+import org.springframework.stereotype.Component; // Used to Declare a Component in Spring Boot
 
+@Component
 public class schema {
-
+    /* 
+    Basically what we are doing here is we are declaring our schema with @ID to mark it with our database  
+    and basic getters and setters cause its private declaration.
+    */
+    @Id
     private String message; 
     private String User;
     private MessageType type;
     private String Channel_Name;
-    private Date date; 
-
+  
     public enum MessageType{
         CHAT,LEAVE,JOIN
     }
@@ -47,16 +52,7 @@ public class schema {
         Channel_Name = channel_Name;
     }
 
-    public Date getDate() {
-         
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
     
-
    
 
     
