@@ -6,7 +6,7 @@ from pydantic import BaseModel
 some_router = APIRouter() 
 
 @some_router.get('/findallmessage')
-async def list_message()-> list:
+async def list_message():
     """
     Args: None 
     
@@ -20,7 +20,7 @@ async def list_message()-> list:
   
 
 @some_router.post('/createmessage')
-async def post_message(message:Message) -> List:
+async def post_message(message:Message) :
    """
     Args: 
     \n Name -> String
@@ -35,7 +35,7 @@ async def post_message(message:Message) -> List:
    return create_message(message.Name,message.Message)
 
 @some_router.delete('/deletemessage')
-async def delete_message(_id) -> str:
+async def delete_message(_id) :
    """
     Args: 
     \n _id -> String 
