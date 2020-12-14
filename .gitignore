@@ -1,0 +1,16 @@
+.DS_Store
+app/.vscode/settings.json
+app/__pycache__/__init__.cpython-39.pyc
+app/__pycache__/main.cpython-39.pyc
+app/api/__pycache__/__init__.cpython-39.pyc
+app/api/__pycache__/some_api.cpython-39.pyc
+app/database/__pycache__/connection.cpython-39.pyc
+app/database/__pycache__/request.cpython-39.pyc
+app/database/__pycache__/__init__.cpython-39.pyc
+app/database/__pycache__/controller.cpython-39.pyc
+app/services/__pycache__/wsconfig.cpython-39.pyc
+app/database/__pycache__/settings.cpython-39.pyc
+app/database/__pycache__/schema.cpython-39.pyc
+app/database/__pycache__/service.cpython-39.pyc
+app/database/__pycache__/routes.cpython-39.pyc
+app/services/__pycache__/__init__.cpython-39.pyc
