@@ -1,3 +1,4 @@
+
 from bson import ObjectId
 from datetime import datetime
 from typing import List, Optional
@@ -6,13 +7,6 @@ from pydantic import BaseModel, Field
 from pymongo import MongoClient
 import app.database.settings 
 from unicodedata import name
-# Connection Stuff 
-client = MongoClient(app.database.settings.MONGO_URL) 
-db = client[app.database.settings.DB_NAME]
-
-# Using FastAPI
-app = FastAPI()
-
 class PyObjectId(ObjectId):
     """
     This is Class is Used to Verify the database just like a custom validator 
@@ -29,14 +23,12 @@ class PyObjectId(ObjectId):
     def __modify_schema__(cls, field_schema):
         field_schema.update(type='string')
 
-#creating channel class to store schema 
-class Message(BaseModel):
+class Messagebody(BaseModel):
     """[summary]
 
     Args:
         BaseModel ([type]): [description]
     """
-    id: Optional[PyObjectId] = Field(alias='_id')
     channel_id: Optional[str] 
     content: Optional[str]  
     sender_id : Optional[str] 
@@ -50,10 +42,4 @@ class Message(BaseModel):
         json_encoders = {
             ObjectId: str
         }
-
-
-        
-        
-        
-        
-        
+   

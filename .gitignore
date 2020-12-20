@@ -14,3 +14,6 @@ app/database/__pycache__/schema.cpython-39.pyc
 app/database/__pycache__/service.cpython-39.pyc
 app/database/__pycache__/routes.cpython-39.pyc
 app/services/__pycache__/__init__.cpython-39.pyc
+venv/
+__pycache__/
+.idea/
