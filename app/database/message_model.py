@@ -1,4 +1,3 @@
-
 from bson import ObjectId
 from datetime import datetime
 from typing import List, Optional
@@ -7,9 +6,11 @@ from pydantic import BaseModel, Field
 from pymongo import MongoClient
 import app.database.settings 
 from unicodedata import name
+
+
 class PyObjectId(ObjectId):
     """
-    This is Class is Used to Verify the database just like a custom validator 
+    This is Class is used to verify the database just like a custom validator 
     """
     @classmethod
     def __get_validators__(cls):
@@ -23,15 +24,15 @@ class PyObjectId(ObjectId):
     def __modify_schema__(cls, field_schema):
         field_schema.update(type='string')
 
-class Messagebody(BaseModel):
+class MessageBody(BaseModel):
     """[summary]
-
+    This model is used for sending the message body 
     Args:
         BaseModel ([type]): [description]
     """
     channel_id: Optional[str] 
-    content: Optional[str]  
-    sender_id : Optional[str] 
+    content: Optional[str]=  None
+    sender_id : Optional[str] = None
     timestamp: Optional[datetime] = None
 
     class Config:

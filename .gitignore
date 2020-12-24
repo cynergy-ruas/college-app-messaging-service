@@ -17,3 +17,5 @@ app/services/__pycache__/__init__.cpython-39.pyc
 venv/
 __pycache__/
 .idea/
+settings.json
+.gitignore

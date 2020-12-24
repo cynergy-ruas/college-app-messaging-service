@@ -9,8 +9,6 @@ from unicodedata import name
 # Connection Stuff 
 client = MongoClient(app.database.settings.MONGO_URL) 
 db = client[app.database.settings.DB_NAME]
-
-# Using FastAPI
 app = FastAPI()
 
 class PyObjectId(ObjectId):
@@ -29,10 +27,9 @@ class PyObjectId(ObjectId):
     def __modify_schema__(cls, field_schema):
         field_schema.update(type='string')
 
-#creating channel class to store schema 
 class Message(BaseModel):
     """[summary]
-
+    This is the Base Model of the database 
     Args:
         BaseModel ([type]): [description]
     """
@@ -50,10 +47,4 @@ class Message(BaseModel):
         json_encoders = {
             ObjectId: str
         }
-
-
-        
-        
-        
-        
         

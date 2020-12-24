@@ -1,9 +1,7 @@
 from fastapi import FastAPI
 from fastapi import APIRouter
-from app.api.dbroutes import some_router
-from app.services.wsconfig import webapp
-# from app.services.webrev import webrev
+from app.api.routes import database_api
+from app.services.ws_controller import websoc
 app = FastAPI()
-app.include_router(some_router)
-app.include_router(webapp)
-# app.include_router(webapp)
+app.include_router(database_api)
+app.include_router(websoc)

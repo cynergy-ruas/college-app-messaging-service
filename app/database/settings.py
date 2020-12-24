@@ -1,4 +1,6 @@
 MONGO_URL = "mongodb://127.0.0.1:27017"
-DB_NAME= "cynergy"
-COLLECTION = "message"
+DB_NAME= "Cynerg_Chat"
+COLLECTION_NAME = "message"
+MAX_CONNECTIONS_COUNT = 100
+MIN_CONNECTIONS_COUNT = 1
 
