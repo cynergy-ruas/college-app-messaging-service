@@ -1,4 +1,4 @@
-# college-app-messaging-service
+# College Messaging Micro-Service 
 Built using FastAPI 💜 
 
 
