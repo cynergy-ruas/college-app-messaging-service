@@ -1,5 +1,5 @@
 # college-app-messaging-service
-This Repository Handles the Messaging Part of the College Application. Built using FastAPI 💜 
+Built using FastAPI 💜 
 
 
 ## Setup
