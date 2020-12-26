@@ -1,5 +1,6 @@
 # college-app-messaging-service
-This repo handles messaging part of the college app
+This Repository Handles the Messaging Part of the College Application. Built using FastAPI 💜 
+
 
 ## Setup
 make sure you have python 3.6+ installed and virtualenv. If you do not have virtualenv installed, run
