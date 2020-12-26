@@ -20,13 +20,13 @@ async def get_message(channel_id: str, start_time: str, end_time: str):
         starttime (str): The start time to fetch messages
         endtime (str): The end time to fetch messages
  
-    Raise: If the channel is not found then 404 exception \
+    Raises: If the channel is not found then 404 exception \
         if the time format is incorrect then 422 exeception \
-        if there is a Mongo Execption then monog exception
+        if there is a Mongo Execption then mongo exception
 
 
     Returns:
-        [List]: A List of all the messages from the channel between two times
+        List: A List of all the messages from the channel between two times
     """
     try:
         start_time = dateutil.parser.parse(start_time)
@@ -53,7 +53,7 @@ async def create_message(channel_id: str, content: str, sender_id: str):
     Raise: Mongo Execption
 
     Returns:
-        [List]: Returns a list of data inserted
+        List: Returns a list of data inserted
     """
     try:
         timestamp = datetime.datetime.now()
@@ -66,4 +66,3 @@ async def create_message(channel_id: str, content: str, sender_id: str):
         }
     except pymongo.errors.CollectionInvalid as e:
         logging.info(e)
-        pass

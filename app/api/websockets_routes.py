@@ -21,7 +21,7 @@ async def startup_event():
     await notifier.generator.asend(None)
 
 
-@websoc.get("/{channel_id}/{sender_id}")
+@websoc.get("/test/{channel_id}/{sender_id}")
 async def get(request: Request, channel_id, sender_id):
     """
     API End Point for conncetion to Web Socket with Front End

@@ -1,9 +1,7 @@
 import os
 
-from dotenv import find_dotenv, load_dotenv
+from app.config import COLLECTION_NAME, DB_NAME, MONGO_URL
 from pymongo import MongoClient
-
-load_dotenv(find_dotenv())
 
 
 class MongoDB:
@@ -15,8 +13,6 @@ class MongoDB:
     _instance = None
 
     def __init__(self):
-        MONGO_URL = os.environ.get("MONGO_URL")
-        DB_NAME = os.environ.get("DB_NAME")
         self.client = MongoClient(MONGO_URL)
         self.db = self.client[DB_NAME]
 
@@ -47,5 +43,5 @@ class MongoDB:
         Returns:
              This Returns the collection
         """
-        COLLECTION_NAME = os.environ.get("COLLECTION_NAME")
+
         return MongoDB.get_database()[COLLECTION_NAME]

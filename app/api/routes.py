@@ -1,3 +1,5 @@
+from typing import List
+
 from app.models.model import Message
 from app.services.message_service import get_message
 from app.utils.errors import APIErrors
@@ -6,7 +8,7 @@ from fastapi import APIRouter, HTTPException
 database_api = APIRouter()
 
 
-@database_api.get("/message/get", response_model=list[Message])
+@database_api.get("/message/get", response_model=List[Message])
 async def list_message(channel_id: str, start_time: str, end_time: str):
     """
     This route is used to get the messages from the database and is handled by a controller
