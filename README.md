@@ -48,7 +48,7 @@ $ python start.py
 
 you can also run the server using `uvicorn`.
 ```
-$ uvicorn app:app
+$ uvicorn app.main:app --reload
 ```
 
 ## Development
