@@ -66,17 +66,38 @@ $ docker build -t cynergyruas/ruas-app:messaging-service-0.0.1 .
 
 and run the image using,
 ```
-$ docker run -p 8000:8000 cynergyruas/ruas-app:message-service-0.0.1     
+$ docker run -p 8000:8000 \
+     -e MONGO_URL=<Mongo_URL> \
+     -e COLLECTION_NAME=<Message_Collection_Name>\
+     -e DB_NAME=<Database_Name> \
+     -e cynergyruas/ruas-app:message-service-0.0.1  
 ```
 ## Testing it 
 
-You may run the server using docer image file 
+You may run the server using docker image file 
 ```
-$ docker run -p 8000:8000 cynergyruas/ruas-app:message-service-0.0.1     
+$ docker run -p 8000:8000 \
+     -e MONGO_URL=<Mongo_URL> \
+     -e COLLECTION_NAME=<Message_Collection_Name>\
+     -e DB_NAME=<Database_Name> \
+     -e cynergyruas/ruas-app:message-service-0.0.1  
 ```
 or you can run the server using 
+
+Linux:
+
+To export the local environment varibles 
 ```
-$ python3 start.py
+$ export $(cat .env | xargs)
+```
+And you can run the server using
+```
+$ python start.py
+``` 
+
+Windows:
+```
+$ MONGO_URL= <Mongo_URL> DB_NAME=<Database_Name> COLLECTION_NAME=<Message_Collection_Name> python start.py
 ```
 After you run the server you can reach this URL to test it out 
 
