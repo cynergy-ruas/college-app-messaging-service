@@ -22,7 +22,7 @@ async def startup_event():
 
 
 @websoc.get("/{channel_id}/{sender_id}")
-async def get(request: Request, channel_id, sender_id) -> Request :
+async def get(request: Request, channel_id:str, sender_id:str):
     """
     API End Point for conncetion to Web Socket with Front End
     Args:
@@ -40,7 +40,7 @@ async def get(request: Request, channel_id, sender_id) -> Request :
 
 
 @websoc.websocket("/ws/{channel_id}/{sender_id}")
-async def websocket_endpoint(websocket: WebSocket, channel_id)-> Request :
+async def websocket_endpoint(websocket: WebSocket, channel_id:str)-> Request :
     """
     API End Point for creating a websocket connection to send and receive data:
     Args:

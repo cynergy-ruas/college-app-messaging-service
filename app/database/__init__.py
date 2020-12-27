@@ -1,13 +1,17 @@
 import os
 
+from dotenv import find_dotenv, load_dotenv
+
 from app.config import COLLECTION_NAME, DB_NAME, MONGO_URL
 from pymongo import MongoClient
+
+
+load_dotenv(find_dotenv())
 
 
 class MongoDB:
     """
     This Class is used the Handle all the Settings for MongoDB Stuff
-
     """
 
     _instance = None

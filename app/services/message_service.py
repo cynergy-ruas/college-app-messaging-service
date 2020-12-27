@@ -36,10 +36,9 @@ async def get_message(channel_id: str, start_time: str, end_time: str):
         return mongo_queries.get_message_between(channel_id, start_time, end_time)
     except pymongo.errors.CollectionInvalid as e:
         logging.error(e)
+        raise APIErrors(500, "Mongo internal server error")
     except ParserError as e:
         raise APIErrors(422, "Invalid Time Format.")
-    except logging.error(e) as e:
-        raise APIErrors(500," Mongo Internal Server Error ")
     except APIErrors as err:
         raise HTTPException(status_code=err.code, detail=err.message)
 
@@ -69,7 +68,6 @@ async def create_message(channel_id: str, content: str, sender_id: str):
             "timestamp": timestamp,
         }
     except pymongo.errors.CollectionInvalid as e:
-        logging.info(e)
-    except logging.error(e) as e:
-        raise APIErrors(500," Mongo Internal Server Error ")
+        logging.error(e)
+        raise APIErrors(500, "Mongo internal server error")
     
