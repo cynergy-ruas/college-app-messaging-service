@@ -48,7 +48,7 @@ $ python start.py
 
 you can also run the server using `uvicorn`.
 ```
-$ uvicorn app:app
+$ uvicorn app.main:app --reload
 ```
 
 ## Development
@@ -66,21 +66,13 @@ $ docker build -t cynergyruas/ruas-app:messaging-service-0.0.1 .
 
 and run the image using,
 ```
-$ docker run -p 8000:8000 \
-    -e MONGO_URL=<Mongo_URL> \
-    -e COLLECTION_NAME=<Message_Collection_Name>\
-    -e DB_NAME=<Database_Name> \
-    -e cynergyruas/ruas-app:message-service-0.0.1
+$ docker run -p 8000:8000 cynergyruas/ruas-app:message-service-0.0.1     
 ```
 ## Testing it 
 
 You may run the server using docer image file 
 ```
-$ docker run -p 8000:8000 \
-    -e MONGO_URL=<Mongo_URL> \
-    -e COLLECTION_NAME=<Message_Collection_Name>\
-    -e DB_NAME=<Database_Name> \
-    -e cynergyruas/ruas-app:message-service-0.0.1
+$ docker run -p 8000:8000 cynergyruas/ruas-app:message-service-0.0.1     
 ```
 or you can run the server using 
 ```
