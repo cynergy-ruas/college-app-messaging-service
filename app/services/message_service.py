@@ -7,7 +7,7 @@ import dateutil.parser
 import pymongo
 from app.utils.errors import APIErrors
 from dateutil.parser import ParserError
-from fastapi import APIRouter
+from fastapi import APIRouter,HTTPException
 
 database_api = APIRouter()
 
@@ -35,9 +35,13 @@ async def get_message(channel_id: str, start_time: str, end_time: str):
             raise APIErrors(404, "The channel you are looking for doesn't exist")
         return mongo_queries.get_message_between(channel_id, start_time, end_time)
     except pymongo.errors.CollectionInvalid as e:
-        logging.info(e)
+        logging.error(e)
     except ParserError as e:
         raise APIErrors(422, "Invalid Time Format.")
+    except logging.error(e) as e:
+        raise APIErrors(500," Mongo Internal Server Error ")
+    except APIErrors as err:
+        raise HTTPException(status_code=err.code, detail=err.message)
 
 
 async def create_message(channel_id: str, content: str, sender_id: str):
@@ -66,3 +70,6 @@ async def create_message(channel_id: str, content: str, sender_id: str):
         }
     except pymongo.errors.CollectionInvalid as e:
         logging.info(e)
+    except logging.error(e) as e:
+        raise APIErrors(500," Mongo Internal Server Error ")
+    

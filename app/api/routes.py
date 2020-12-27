@@ -20,7 +20,7 @@ async def list_message(channel_id: str, start_time: str, end_time: str):
         end_time (str): The end time
 
     Returns:
-        [List]: A List of all the messages from the channel between two times
+        List: A List of all the messages from the channel between two times
     """
     try:
         return await get_message(channel_id, start_time, end_time)

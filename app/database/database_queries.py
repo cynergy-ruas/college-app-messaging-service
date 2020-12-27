@@ -27,7 +27,7 @@ def get_message_between(channel_id: str, start_time: datetime, end_time: datetim
 
 
 async def create_message(channel_id: str, content: str, sender_id: str):
-    """[summary]
+    """
     This Function is used to create a message using Mongo Query :
         channel_id (str): The Channel UUID
         content (str): The Message :

@@ -1,5 +1,6 @@
-# college-app-messaging-service
-This repo handles messaging part of the college app
+# College Messaging Micro-Service 
+Built using FastAPI 💜 
+
 
 ## Setup
 make sure you have python 3.6+ installed and virtualenv. If you do not have virtualenv installed, run
@@ -70,4 +71,23 @@ $ docker run -p 8000:8000 \
     -e COLLECTION_NAME=<Message_Collection_Name>\
     -e DB_NAME=<Database_Name> \
     -e cynergyruas/ruas-app:message-service-0.0.1
+```
+## Testing it 
+
+You may run the server using docer image file 
+```
+$ docker run -p 8000:8000 \
+    -e MONGO_URL=<Mongo_URL> \
+    -e COLLECTION_NAME=<Message_Collection_Name>\
+    -e DB_NAME=<Database_Name> \
+    -e cynergyruas/ruas-app:message-service-0.0.1
+```
+or you can run the server using 
+```
+$ python3 start.py
+```
+After you run the server you can reach this URL to test it out 
+
+```
+http://localhost:8000/<channel_name>/<user_name>
 ```
