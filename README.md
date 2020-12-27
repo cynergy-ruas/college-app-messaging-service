@@ -84,6 +84,14 @@ $ docker run -p 8000:8000 \
 ```
 or you can run the server using 
 
+.env file will contains 
+
+```
+MONGO_URL 
+DB_NAME
+COLLECTION_NAME
+```
+
 Linux:
 
 To export the local environment varibles 
@@ -97,8 +105,20 @@ $ python start.py
 
 Windows:
 ```
-$ MONGO_URL= <Mongo_URL> DB_NAME=<Database_Name> COLLECTION_NAME=<Message_Collection_Name> python start.py
+$env:MONGO_URL=<Mongo_URL>
+$env:DB_NAME=<Database_Name>
+$env:COLLECTION_NAME=<Message_Collection_Name>
 ```
+Activating the environment 
+
+```
+./venv/Scripts/activate 
+```
+To run 
+```
+python start.py
+```
+
 After you run the server you can reach this URL to test it out 
 
 ```
