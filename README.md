@@ -1,5 +1,5 @@
 # College Messaging Micro-Service 
-Built using FastAPI 💜 
+This Repository is the Backend Micro-Service that handles Messaging Part of the College Application. Built Using Python 💜 
 
 
 ## Setup
