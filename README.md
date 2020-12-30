@@ -67,7 +67,7 @@ $ docker build -t cynergyruas/ruas-app:messaging-service-0.0.1 .
 and run the image using,
 ```
 $ docker run -p 8000:8000 \
-     -e MONGO_URL=<Mongo_URL> \
+     -e MONGODB_URI=<MONGODB_URI> \
      -e COLLECTION_NAME=<Message_Collection_Name>\
      -e DB_NAME=<Database_Name> \
      -e cynergyruas/ruas-app:message-service-0.0.1  
@@ -77,7 +77,7 @@ $ docker run -p 8000:8000 \
 You may run the server using docker image file 
 ```
 $ docker run -p 8000:8000 \
-     -e MONGO_URL=<Mongo_URL> \
+     -e MONGODB_URI=<MONGODB_URI> \
      -e COLLECTION_NAME=<Message_Collection_Name>\
      -e DB_NAME=<Database_Name> \
      -e cynergyruas/ruas-app:message-service-0.0.1  
@@ -87,7 +87,7 @@ or you can run the server using
 .env file will contains 
 
 ```
-MONGO_URL 
+MONGODB_URI 
 DB_NAME
 COLLECTION_NAME
 ```
@@ -105,7 +105,7 @@ $ python start.py
 
 Windows:
 ```
-$env:MONGO_URL=<Mongo_URL>
+$env:MONGODB_URI=<MONGODB_URI>
 $env:DB_NAME=<Database_Name>
 $env:COLLECTION_NAME=<Message_Collection_Name>
 ```
