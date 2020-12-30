@@ -1,4 +1,4 @@
 import os
-MONGO_URL = os.environ.get("MONGO_URL")
-DB_NAME = os.environ.get("DB_NAME")
-COLLECTION_NAME = os.environ.get("COLLECTION_NAME")
+MONGO_URL = os.environ.get("MONGODB_URI")
+DB_NAME = "message"
+COLLECTION_NAME = "messages"
