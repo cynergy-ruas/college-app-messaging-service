@@ -21,7 +21,7 @@ async def startup_event():
     await notifier.generator.asend(None)
 
 
-@websoc.get("/{channel_id}/{sender_id}")
+@websoc.get("/message/{channel_id}/{sender_id}")
 async def get(request: Request, channel_id:str, sender_id:str):
     """
     API End Point for conncetion to Web Socket with Front End
@@ -39,7 +39,7 @@ async def get(request: Request, channel_id:str, sender_id:str):
     )
 
 
-@websoc.websocket("/ws/{channel_id}/{sender_id}")
+@websoc.websocket("/message/ws/{channel_id}/{sender_id}")
 async def websocket_endpoint(websocket: WebSocket, channel_id:str)-> Request :
     """
     API End Point for creating a websocket connection to send and receive data:
