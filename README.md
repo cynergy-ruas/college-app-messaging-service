@@ -122,5 +122,5 @@ python start.py
 After you run the server you can reach this URL to test it out 
 
 ```
-http://localhost:8000/<channel_name>/<user_name>
+http://localhost:8000/message/<channel_name>/<user_name>
 ```
